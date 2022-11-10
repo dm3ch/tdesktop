@@ -49,7 +49,7 @@ jobs:
         arch: [Win32, x64]
 
     env:
-      UPLOAD_ARTIFACT: "false"
+      UPLOAD_ARTIFACT: "true"
       ONLY_CACHE: "false"
       PREPARE_PATH: "Telegram/build/prepare/prepare.py"
 
@@ -139,7 +139,8 @@ jobs:
 
           call configure.bat ^
           ${{ matrix.arch }} ^
-          -D TDESKTOP_API_TEST=ON ^
+          -D TDESKTOP_API_ID=611335 ^
+          -D TDESKTOP_API_HASH=d524b414d21f4d37f08684c1df41ac9c ^
           -D DESKTOP_APP_DISABLE_CRASH_REPORTS=OFF ^
           -D DESKTOP_APP_NO_PDB=ON ^
           %TDESKTOP_BUILD_DEFINE% ^
