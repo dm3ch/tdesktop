@@ -980,6 +980,12 @@ void HistoryWidget::initVoiceRecordBar() {
 
 	const auto applyLocalDraft = [=] {
 		if (_history && _history->localDraft({})) {
+			_history->setLocalDraft(std::make_unique<Data::Draft>(
+				TextWithTags(),
+				MsgId(),
+				MsgId(),
+				MessageCursor(),
+				Data::PreviewState::Allowed));
 			applyDraft();
 		}
 	};
